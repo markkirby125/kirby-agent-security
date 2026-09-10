@@ -4,7 +4,7 @@
 
 A rigorous Standard Operating Procedure (SOP) for auditing, scanning, and validating third-party AI agent skills, plugins, and Model Context Protocol (MCP) servers prior to installation.
 
-As agentic workflows transition to autonomous execution environments, third-party extensions represent a primary attack surface. This skill equips AI coding assistants with a strict dual-layer defense architecture (automated static scanning via NVIDIA Skill Spectre + manual behavioral audits) to prevent prompt injection, credential exfiltration, and supply chain poisoning.
+As agentic workflows transition to autonomous execution environments, third-party extensions represent a primary attack surface. This skill equips AI coding assistants with a strict dual-layer defence architecture (automated static scanning via NVIDIA Skill Spectre + manual behavioural audits) to prevent prompt injection, credential exfiltration, and supply chain poisoning.
 
 ## 🪄 The Magic Prompt
 
