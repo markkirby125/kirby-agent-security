@@ -139,6 +139,8 @@ MCP servers represent persistent sub-processes with direct tool-calling privileg
      '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' \
      | <mcp-command> 2>/dev/null | head -c 500
    ```
+5. **The "Read-Only" API Mandate for SEO Operations:**
+   When wiring SEO tools (Ahrefs, SEMrush, GSC) to agent MCPs, restrict all API keys and OAuth scopes to **Read-Only**. Agents are permitted to run parallel research tasks (e.g., bulk keyword gap analysis, SERP extraction), but must never be allowed to autonomously push disavow files, submit sitemaps, or modify GSC settings without a human approval gate.
 
 ---
 
