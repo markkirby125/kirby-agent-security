@@ -1,8 +1,8 @@
 ---
 name: kirby-agent-security
-description: "Use when tasked with auditing, scanning, or validating a third-party AI agent skill, plugin, or MCP server prior to installation."
+description: "Use when tasked with auditing, scanning, or validating a third-party AI agent skill, plugin, or MCP server prior to installation, or when wiring SEO tool APIs (Ahrefs, SEMrush, GSC) into agent MCP configs."
 category: technique
-triggers: [security-audit, mcp-scan, pre-install, skillspectre, malware, skill-audit]
+triggers: [security-audit, mcp-scan, pre-install, skillspectre, malware, skill-audit, seo-mcp-readonly]
 ---
 
 # SOP: AI Agent Skill & MCP Security Verification
@@ -171,4 +171,5 @@ Execute this checklist for every candidate tool prior to installation:
 - [ ] **Permission Alignment:** Tool permissions strictly match documented functionality.
 - [ ] **Provenance:** Author identity verified; repository has authentic history.
 - [ ] **MCP Schema Cleanliness:** Tool definitions contain no secondary prompt injection prompts.
+- [ ] **SEO MCP read-only:** Ahrefs, SEMrush, and GSC keys/OAuth are read-only; no autonomous disavow, sitemap, or GSC writes.
 - [ ] **Risk Score:** Calculated risk score is ≤39.
