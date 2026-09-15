@@ -141,6 +141,7 @@ MCP servers represent persistent sub-processes with direct tool-calling privileg
    ```
 5. **The "Read-Only" API Mandate for SEO Operations:**
    When wiring SEO tools (Ahrefs, SEMrush, GSC) to agent MCPs, restrict all API keys and OAuth scopes to **Read-Only**. Agents are permitted to run parallel research tasks (e.g., bulk keyword gap analysis, SERP extraction), but must never be allowed to autonomously push disavow files, submit sitemaps, or modify GSC settings without a human approval gate.
+6. **No autonomous 402 / x402 spend:** Agents must not auto-pay Cloudflare pay-per-crawl, HTTP 402, x402, or paid MCP/tool invoices. Treat payment-required crawler and tool calls as a **write/spend surface**. Retry only after a human approval gate.
 
 ---
 
@@ -172,4 +173,5 @@ Execute this checklist for every candidate tool prior to installation:
 - [ ] **Provenance:** Author identity verified; repository has authentic history.
 - [ ] **MCP Schema Cleanliness:** Tool definitions contain no secondary prompt injection prompts.
 - [ ] **SEO MCP read-only:** Ahrefs, SEMrush, and GSC keys/OAuth are read-only; no autonomous disavow, sitemap, or GSC writes.
+- [ ] **No 402/x402 auto-pay:** Agent cannot autonomously settle pay-per-crawl, HTTP 402, or paid MCP invoices.
 - [ ] **Risk Score:** Calculated risk score is ≤39.
