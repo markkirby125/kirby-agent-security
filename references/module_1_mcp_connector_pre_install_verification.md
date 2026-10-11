@@ -13,10 +13,10 @@ The AI Design System toolstack admits two third-party connectors into the agent 
 5.  **Mutation audit:** Confirm destructive operations (delete layer, clear canvas) require explicit agent invocation — no batch/"clean up" tools that act beyond their named scope.
 
 ### **1.3 Higgsfield API Connector — Verification Pass**
-1.  **Credential handling:** API key stored in the agent environment's secret store only — never in prompt-transmitted config, markdown files, or canvas documents. Confirm the connector redacts the key from all logs.
+1.  **Credential handling:** API key stored in the agent environment's secret store only — never in prompt-transmitted config, markdown files, or canvas documents. Confirm the connector redacts the key from all logs. Least-privilege scope (a generation-scoped key, not an account-wide master key) and a documented rotation interval in the registration record.
 2.  **Egress allowlist:** The connector may call only the documented Higgsfield generation endpoints. Reject generic HTTP-proxy tooling ("fetch any URL") wrapped around the API.
-3.  **Ingress path:** Generated assets land in a designated, sandboxed asset directory (the canvas slot target). The connector must not execute or parse returned binaries beyond image/video decoding.
-4.  **Data-minimization default:** Prompts sent to the generation engine contain creative content only. No environment variables, file contents, or prior conversation context are attached by default; any "context enrichment" feature is disabled at verification time unless explicitly required.
+3.  **Ingress path:** Generated assets land in a designated, sandboxed asset directory (the canvas slot target). The connector must not execute or parse returned binaries beyond image/video decoding; enforce declared content-type plus a size bound on accepted assets.
+4.  **Data-minimization default:** Prompts sent to the generation engine contain creative content only. No environment variables, file contents, or prior conversation context are attached by default; any "context enrichment" feature is disabled at verification time unless explicitly required. Canvas-sourced prompt metadata is untrusted input — sanitize (strip instruction-like strings, length-bound) before egress.
 
 ### **1.4 Registration Gate**
 Record for each connector: version pin, verified tool/endpoint surface, secret-handling attestation, scan artifacts, and reviewer sign-off. Register in agent configuration only after both gates pass. Re-verify on every version bump or scope change — an auto-updating connector is an unverified connector.
