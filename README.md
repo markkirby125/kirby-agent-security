@@ -6,6 +6,8 @@ A rigorous Standard Operating Procedure (SOP) for auditing, scanning, and valida
 
 As agentic workflows transition to autonomous execution environments, third-party extensions represent a primary attack surface. This skill equips AI coding assistants with a strict dual-layer defence architecture (automated static scanning via NVIDIA Skill Spectre + manual behavioural audits) to prevent prompt injection, credential exfiltration, and supply chain poisoning.
 
+**October 2026 update (Module 1):** connector-specific pre-install verification for the `kirby-ai-design-system` toolstack — the Paper.design MCP server (loopback-bound transport, enumerated tool-surface allowlist, injection scan) and the Higgsfield API (secret-store credentials, endpoint egress allowlist, sandboxed asset ingress), re-verified on every version bump.
+
 ## 🪄 The Magic Prompt
 
 Copy and paste this directly to your AI (Cursor, Windsurf, Claude Code, Antigravity):
