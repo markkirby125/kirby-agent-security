@@ -4,7 +4,7 @@ description: "Use when tasked with auditing, scanning, or validating a third-par
 category: technique
 triggers: [security-audit, mcp-scan, pre-install, skillspectre, malware, skill-audit, seo-mcp-readonly]
 risk: unverified
-author: william-fitzpatrick
+author: paul-kirby
 tags: [kirby, ai-agent, workflow]
 ---
 
